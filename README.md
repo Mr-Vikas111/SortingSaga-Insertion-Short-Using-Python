@@ -19,7 +19,45 @@ def insertionSort(arr):
 
 arr = [9, 5, 1, 4, 3]
 
+# call function
 insertionSort(arr) -> return -> [1, 3, 4, 5, 9]
 
 ```
+
+
+# Practice Questions (Basic)
+
+1. Trace the insertion sort algorithm for the array:
+Input: [8, 4, 6, 2, 9, 1]
+Output: Show the array at each step.
+
+```
+def InsertionSortStep(arr):
+    arr_len = len(arr)
+    for i in range(1,arr_len):
+        curr = arr[i]
+        prev = i - 1
+        while prev >= 0 and curr < arr[prev]:
+            arr[prev+1] = arr[prev]
+            prev -= 1
+        
+        arr[prev+1] = curr
+        print(f"Step {i}: {arr}")
+    return arr
+
+arr = [8, 4, 6, 2, 9, 1]
+
+# call function
+InsertionSortStep(arr)
+```
+Output:
+```
+Step 1: [4, 8, 6, 2, 9, 1]
+Step 2: [4, 6, 8, 2, 9, 1]
+Step 3: [2, 4, 6, 8, 9, 1]
+Step 4: [2, 4, 6, 8, 9, 1]
+Step 5: [1, 2, 4, 6, 8, 9]
+sorted_array [1, 2, 4, 6, 8, 9]
+```
+
 
