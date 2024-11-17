@@ -96,4 +96,37 @@ Step 4, ['apple', 'banana', 'cherry', 'date', 'fig']
 Final output ['apple', 'banana', 'cherry', 'date', 'fig']
 ```
 
+3. Modify the insertion sort algorithm to sort an array in descending order.
+   ```
+   def DesInsertionSortAlgo(arr):
+        arr_len = len(arr)
+    
+        for i in range(1,arr_len):
+            curr = arr[i]
+            prev = i - 1
+        
+            while prev >= 0 and curr > arr[prev]:
+                arr[prev+1] = arr[prev]
+                prev -= 1
+        
+            arr[prev+1] = curr
+   
+    return arr
+    
+    arr = [8, 4, 6, 2, 9, 1]
+    print(DesInsertionSortAlgo(arr))
+
+   ```
+   output:
+   
+   ```
+    Step 1, [8, 4, 6, 2, 9, 1]
+    Step 2, [8, 6, 4, 2, 9, 1]
+    Step 3, [8, 6, 4, 2, 9, 1]
+    Step 4, [9, 8, 6, 4, 2, 1]
+    Step 5, [9, 8, 6, 4, 2, 1]
+
+   final output - [9, 8, 6, 4, 2, 1]
+
+   ```
 
