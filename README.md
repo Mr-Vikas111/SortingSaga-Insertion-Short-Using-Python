@@ -60,4 +60,40 @@ Step 5: [1, 2, 4, 6, 8, 9]
 sorted_array [1, 2, 4, 6, 8, 9]
 ```
 
+2. Sort the following list of strings alphabetically using insertion sort:
+Input: ["banana", "apple", "cherry", "date", "fig"]
+output: ['apple', 'banana', 'cherry', 'date', 'fig']
+
+```
+def insertionSortAlphabetical(arr):
+    arr_len = len(arr)
+    
+    for i in range(1,arr_len):
+        curr = arr[i]
+        prev = i-1
+        
+        while prev >= 0 and curr < arr[prev]:
+            arr[prev+1] = arr[prev]
+            prev -= 1
+        
+        arr[prev+1] = curr
+        print(f"Step {i}, {arr}")
+    return arr
+
+
+arr =  ["banana", "apple", "cherry", "date", "fig"]
+
+insertionSortAlphabetical(arr)
+```
+output:
+
+```
+Step 1, ['apple', 'banana', 'cherry', 'date', 'fig']
+Step 2, ['apple', 'banana', 'cherry', 'date', 'fig']
+Step 3, ['apple', 'banana', 'cherry', 'date', 'fig']
+Step 4, ['apple', 'banana', 'cherry', 'date', 'fig']
+
+Final output ['apple', 'banana', 'cherry', 'date', 'fig']
+```
+
 
